@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Vue Study Tracker - Faculdade</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+  <div id="app">
+    <h1>🎓 Controle de Disciplinas - Faculdade</h1>
+
+    <form @submit.prevent="adicionarEstudo">
+      <input type="text" v-model="novaDisciplina" placeholder="Nome da disciplina">
+      <input type="text" v-model="novaCarga" placeholder="Carga horária (ex: 3h/semana)">
+      <button>Adicionar</button>
+    </form>
+
+    <p v-if="erro" class="erro">Preencha todos os campos!</p>
+
+    <div class="filtro">
+      <button @click="filtro = 'todos'">Todos</button>
+      <button @click="filtro = 'pendentes'">Pendentes</button>
+      <button @click="filtro = 'concluidos'">Concluídos</button>
+    </div>
+
+    <ul>
+      <li v-for="(item, index) in estudosFiltrados" :key="index">
+        <span :class="{ feito: item.concluido }">
+          {{ item.nome }} - {{ item.carga }}
+        </span>
+        <div>
+          <button @click="item.concluido = !item.concluido">
+            {{ item.concluido ? 'Reabrir' : 'Concluir' }}
+          </button>
+          <button @click="remover(index)">Remover</button>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f9f9f9;
+    padding: 30px;
+    max-width: 700px;
+    margin: auto;
+  }
+  
+  h1 {
+    color: #42b983;
+    text-align: center;
+  }
+  
+  form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+  }
+  
+  input {
+    flex: 1;
+    padding: 8px;
+  }
+  
+  button {
+    padding: 8px 12px;
+    background: #42b983;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    background: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-left: 5px solid #42b983;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .feito {
+    text-decoration: line-through;
+    color: gray;
+  }
+  
+  .erro {
+    color: red;
+    margin-bottom: 10px;
+  }
+  
+  .filtro {
+    margin: 10px 0;
+  }
+  
+  .filtro button {
+    background: #2c3e50;
+    margin-right: 5px;
+    color: white;
+  }
+  
