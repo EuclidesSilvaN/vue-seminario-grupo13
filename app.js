@@ -38,5 +38,19 @@ createApp({
     remover(index) {
       this.estudos.splice(index, 1);
     }
+  },
+  mounted() {
+    const dadosSalvos = localStorage.getItem('estudosVue');
+    if (dadosSalvos) {
+      this.estudos = JSON.parse(dadosSalvos);
+    }
+  },
+  watch: {
+    estudos: {
+      handler(novosEstudos) {
+        localStorage.setItem('estudosVue', JSON.stringify(novosEstudos));
+      },
+      deep: true
+    }
   }
 }).mount('#app');
