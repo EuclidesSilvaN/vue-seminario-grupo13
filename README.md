@@ -29,7 +29,8 @@ Criar uma aplicação simples utilizando Vue.js para demonstrar os principais co
 Ou use a extensão Live Server no VS Code para abrir com servidor local.
 
 ## Demonstração
-
+![Tela Inicial](print1.png)
+![Interação da Aplicação](print2.png)
 
 ## 📂 Estrutura do Projeto
 
